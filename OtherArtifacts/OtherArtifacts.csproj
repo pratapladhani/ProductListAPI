@@ -35,10 +35,13 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Swagger\PAProductList.msapp" />
-    <None Include="Swagger\Swagger.json" />
+    <None Include="..\..\..\..\..\Desktop\Swagger.json">
+      <Link>Swagger\Swagger.json</Link>
+    </None>
     <None Include="template.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Swagger\Product.svg" />
     <Content Include="Swagger\Products_list_icon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
