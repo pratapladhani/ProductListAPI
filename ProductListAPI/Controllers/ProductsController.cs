@@ -13,11 +13,17 @@ using Microsoft.SqlServer.Server;
 
 namespace ProductListAPI.Controllers
 {
+    /// <summary>
+    /// Products Controller
+    /// </summary>
     public class ProductsController : ApiController
     {
         private const string FILENAME = "products.json";
         private GenericStorage _storage;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ProductsController()
         {
             _storage = new GenericStorage();
@@ -62,6 +68,9 @@ namespace ProductListAPI.Controllers
         /// Gets the list of products
         /// </summary>
         /// <returns>The Product inventory</returns>
+        /// <remarks>
+        /// This operation returns the list of products along with their current stock
+        /// </remarks>
         [HttpGet]
         [SwaggerResponse(HttpStatusCode.OK,
             Type = typeof(IEnumerable<Product>))]
@@ -76,6 +85,9 @@ namespace ProductListAPI.Controllers
         /// </summary>
         /// <param name="id">Identifier for the product</param>
         /// <returns>The requested product</returns>
+        /// <remarks>
+        /// This operation returns the specific product based on the ID along with it's current stock
+        /// </remarks>
         [HttpGet]
         [SwaggerResponse(HttpStatusCode.OK,
             Description = "OK",
@@ -96,6 +108,9 @@ namespace ProductListAPI.Controllers
         /// </summary>
         /// <param name="product">The new product</param>
         /// <returns>The saved product</returns>
+        /// <remarks>
+        /// This operation creates a new product along with it's current stock
+        /// </remarks>
         [HttpPost]
         [SwaggerResponse(HttpStatusCode.Created,
             Description = "Created",
@@ -116,6 +131,9 @@ namespace ProductListAPI.Controllers
         /// </summary>
         /// <param name="id">Identifier of the product to be deleted</param>
         /// <returns>True if the product was deleted</returns>
+        /// <remarks>
+        /// This operation deletes the product from the inventory
+        /// </remarks>
         [HttpDelete]
         [SwaggerResponse(HttpStatusCode.OK,
             Description = "OK",
@@ -145,8 +163,10 @@ namespace ProductListAPI.Controllers
         /// <summary>
         /// Deletes all products
         /// </summary>
-        /// <param name="id">Identifier of the product to be deleted</param>
         /// <returns>True if the product was deleted</returns>
+        /// <remarks>
+        /// This operation deletes all the products from the inventory
+        /// </remarks>
         [HttpDelete]
         [SwaggerResponse(HttpStatusCode.OK,
             Description = "OK",

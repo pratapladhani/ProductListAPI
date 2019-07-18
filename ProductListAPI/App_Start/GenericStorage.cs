@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProductListAPI
 {
-    public class GenericStorage
+    internal class GenericStorage
     {
         private string _filePath;
 

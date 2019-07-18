@@ -6,14 +6,20 @@ using Swashbuckle.Application;
 using Swashbuckle.Swagger;
 using WebActivatorEx;
 using ProductListAPI;
+using System;
+using System.Reflection;
+using System.IO;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace ProductListAPI
 {
-    public class SwaggerConfig
+    /// <summary>
+    /// Swagger Config file
+    /// </summary>
+    internal class SwaggerConfig
     {
-        public static void Register()
+        internal static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
@@ -162,7 +168,7 @@ namespace ProductListAPI
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        //c.IncludeXmlComments(GetXmlCommentsPath());
+                        c.IncludeXmlComments(GetXmlCommentsPath());
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swashbuckle will raise an exception if it encounters multiple actions
@@ -219,6 +225,19 @@ namespace ProductListAPI
                         //c.EnableOAuth2Support("test-client-id", "test-realm", "Swagger UI");
                     });
         }
+
+        /// <summary>
+        /// Returns the path to the XMLcomments
+        /// </summary>
+        /// <returns></returns>
+        private static string GetXmlCommentsPath()
+        {
+            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            var commentsFileName = Assembly.GetExecutingAssembly().GetName().Name + ".xml";
+            var commentsFile = Path.Combine(baseDirectory, "bin/", commentsFileName);
+            return commentsFile;
+
+        }
     }
 
     internal class IncludeParameterNamesInOperationIdFilter : IOperationFilter
@@ -239,4 +258,6 @@ namespace ProductListAPI
             }
         }
     }
+
+    
 }

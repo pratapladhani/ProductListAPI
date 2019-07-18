@@ -1,6 +1,9 @@
 ﻿
 namespace ProductListAPI.Models
 {
+    /// <summary>
+    /// Product
+    /// </summary>
     public class Product 
     {
         /// <summary>
