@@ -36,6 +36,7 @@
     <None Include="App.config" />
     <None Include="Swagger\PAProductList.msapp" />
     <None Include="Swagger\Swagger.json" />
+    <None Include="template.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Swagger\Products_list_icon.jpg" />
