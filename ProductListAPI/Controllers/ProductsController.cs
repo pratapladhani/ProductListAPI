@@ -104,6 +104,44 @@ namespace ProductListAPI.Controllers
         }
 
         /// <summary>
+        /// Update a specific product
+        /// </summary>
+        /// <param name="product">Product to update inluding ID</param>
+        /// <param name="Id">Product Id to update </param>
+        /// <returns>True if update successful</returns>
+        /// <remarks>
+        /// This operation updates the specific product based on the ID along with it's current stock
+        /// </remarks>
+        [HttpPost]
+        [SwaggerResponse(HttpStatusCode.OK,
+            Description = "OK",
+            Type = typeof(bool))]
+        [SwaggerResponse(HttpStatusCode.NotFound,
+            Description = "Product not found",
+            Type = typeof(bool))]
+        [SwaggerOperation("UpdateProductById")]
+        [Route("~/products/{id}")]
+        public HttpResponseMessage Update([FromBody] Product product, [FromUri] int Id)
+        {
+            var inventory = GetInventory();
+
+            //var productList = inventory.ToList();
+            var curProduct = inventory.FirstOrDefault(x => x.Id == Id);
+            if (curProduct == null || curProduct.Id != Id)
+            {
+                return Request.CreateResponse<bool>(HttpStatusCode.NotFound, false);
+            }
+            else
+            {
+                Delete(Id);
+                Post(product);
+                return Request.CreateResponse<bool>(HttpStatusCode.OK, true);
+            }
+            
+
+        }
+
+        /// <summary>
         /// Creates a new product
         /// </summary>
         /// <param name="product">The new product</param>
