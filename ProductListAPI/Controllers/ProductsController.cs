@@ -75,6 +75,7 @@ namespace ProductListAPI.Controllers
         [SwaggerResponse(HttpStatusCode.OK,
             Type = typeof(IEnumerable<Product>))]
         [Route("~/products")]
+        [SwaggerOperation("GetAllProducts")]
         public IEnumerable<Product> Get()
         {
             return GetInventory();
@@ -107,7 +108,7 @@ namespace ProductListAPI.Controllers
         /// Update a specific product
         /// </summary>
         /// <param name="product">Product to update inluding ID</param>
-        /// <param name="Id">Product Id to update </param>
+        /// <param name="ProductId">Product Id to update </param>
         /// <returns>True if update successful</returns>
         /// <remarks>
         /// This operation updates the specific product based on the ID along with it's current stock
@@ -119,21 +120,21 @@ namespace ProductListAPI.Controllers
         [SwaggerResponse(HttpStatusCode.NotFound,
             Description = "Product not found",
             Type = typeof(bool))]
-        [SwaggerOperation("UpdateProductById")]
-        [Route("~/products/{id}")]
-        public HttpResponseMessage Update([FromBody] Product product, [FromUri] int Id)
+        [SwaggerOperation("UpdateProduct")]
+        [Route("~/products/{ProductId}")]
+        public HttpResponseMessage Update([FromBody] Product product, [FromUri] int ProductId)
         {
             var inventory = GetInventory();
 
             //var productList = inventory.ToList();
-            var curProduct = inventory.FirstOrDefault(x => x.Id == Id);
-            if (curProduct == null || curProduct.Id != Id)
+            var curProduct = inventory.FirstOrDefault(x => x.Id == ProductId);
+            if (curProduct == null || curProduct.Id != ProductId)
             {
                 return Request.CreateResponse<bool>(HttpStatusCode.NotFound, false);
             }
             else
             {
-                Delete(Id);
+                Delete(ProductId);
                 Post(product);
                 return Request.CreateResponse<bool>(HttpStatusCode.OK, true);
             }
