@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductListAPI", "ProductListAPI\ProductListAPI.csproj", "{12B6DD58-3A99-4DDE-9013-3720DEC683F4}"
 EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "PowerAppsProductListAPI", "PowerAppsProductListAPI\PowerAppsProductListAPI.deployproj", "{0F2B66CD-5923-4AD8-959C-CFA51A95C3BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{12B6DD58-3A99-4DDE-9013-3720DEC683F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12B6DD58-3A99-4DDE-9013-3720DEC683F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12B6DD58-3A99-4DDE-9013-3720DEC683F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F2B66CD-5923-4AD8-959C-CFA51A95C3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F2B66CD-5923-4AD8-959C-CFA51A95C3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F2B66CD-5923-4AD8-959C-CFA51A95C3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F2B66CD-5923-4AD8-959C-CFA51A95C3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
