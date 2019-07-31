@@ -26,4 +26,4 @@ The lab requires:
 - Access to a PowerApps environment with permission to create apps and custom connectors
 
 ### Lab Manual
-Refer to the following document for the step-by-step guidance for this lab: [Lab Manual](https://raw.githubusercontent.com/pratapladhani/ProductListAPI/master/OtherArtifacts/Lab%20Resources/Hands-on%20with%20PowerApps%20and%20Azure-Lab%20Document.pdf)
+Refer to the following document for the step-by-step guidance for this [Lab Manual](https://github.com/pratapladhani/ProductListAPI/blob/master/OtherArtifacts/Lab%20Resources/Hands-on%20with%20PowerApps%20and%20Azure-Lab%20Document.pdf).  
