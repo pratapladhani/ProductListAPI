@@ -34,15 +34,16 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Swagger\PAProductList.msapp" />
+    <None Include="Lab Resources\Hands-on with PowerApps and Azure-Lab Document.pdf" />
+    <None Include="Lab Resources\PAProductList.msapp" />
     <None Include="..\..\..\..\..\Desktop\Swagger.json">
       <Link>Swagger\Swagger.json</Link>
     </None>
     <None Include="template.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Swagger\Product.svg" />
-    <Content Include="Swagger\Products_list_icon.jpg" />
+    <Content Include="Lab Resources\Product.svg" />
+    <Content Include="Lab Resources\Products_list_icon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
