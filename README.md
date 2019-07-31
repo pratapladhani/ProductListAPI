@@ -1,15 +1,12 @@
 # PowerApps + Azure Lab
 
-This repository contains a lab for demonstrating how PowerApps can be used in conjunction with Restful APIs  
+This repository contains a lab for demonstrating how PowerApps can be along with Restful APIs hosted in Azure API Apps using custom connectors 
 
 ## Lab Overview & Objective
 
 ### Objective
 
-This lab has two key objectives:
-
 - To demonstrate how PowerApps platform can help unlock the potential of untapped assets within an Enterprise ( legacy APIs, data sources, processes) with a low-code / no code approach.  
-- To demonstrate how the above pattern can, in turn,  engender Azure consumption in the enterprise.  
 
 ### Overview
 
