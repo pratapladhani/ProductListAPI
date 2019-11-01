@@ -4,7 +4,7 @@
     "version": "v1",
     "title": "ProductListAPI"
   },
-  "host": "paproductlist.azurewebsites.net",
+  "host": "UseYourWebAppName.azurewebsites.net",
   "schemes": [ "http" ],
   "paths": {
     "/products": {

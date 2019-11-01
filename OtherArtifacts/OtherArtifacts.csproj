@@ -36,9 +36,7 @@
     <None Include="App.config" />
     <None Include="Lab Resources\Hands-on with PowerApps and Azure-Lab Document.pdf" />
     <None Include="Lab Resources\PAProductList.msapp" />
-    <None Include="..\..\..\..\..\Desktop\Swagger.json">
-      <Link>Swagger\Swagger.json</Link>
-    </None>
+    <None Include="Lab Resources\Swagger.json" />
     <None Include="template.json" />
   </ItemGroup>
   <ItemGroup>
